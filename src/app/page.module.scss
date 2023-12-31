@@ -1,0 +1,11 @@
+@import "../styles/veriables.scss";
+
+.main {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 6rem;
+  min-height: 100vh;
+}
