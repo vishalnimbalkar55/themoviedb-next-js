@@ -14,21 +14,27 @@ export default function RootLayout({ children }) {
   const navItems = [
     {
       item: "All",
+      link: "/",
     },
     {
       item: "Action",
+      link: "/action",
     },
     {
       item: "Comedy",
+      link: "/comedy",
     },
     {
       item: "Horror",
+      link: "/horror",
     },
     {
       item: "Drama",
+      link: "/drama",
     },
     {
       item: "Sci-Fi",
+      link: "/sci-fi",
     },
   ];
   return (
@@ -42,7 +48,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <NavBar navItems={navItems} />
         {children}
-        <Footer />
+
+        {/* <Footer /> */}
       </body>
     </html>
   );

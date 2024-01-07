@@ -31,12 +31,9 @@ export const apiClient = async (props) => {
 };
 
 export const homeApiService = async ({ body }) => {
-  // console.clear();
-  // console.log("props----------", body);
-  // console.log("body", body);
   const homeData = {};
   const years = [];
-
+  console.log("body ---------------------", body);
   // Generate the list of years
   for (let year = body.startYear; year <= body.endYear; year++) {
     years.push(year);
@@ -44,32 +41,30 @@ export const homeApiService = async ({ body }) => {
   // console.log("years-----", years);
 
   const popularMovie = await apiClient({
-    params:
-      "&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+    params: `&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc${
+      body.genres != 0 ? `&with_genres=${body.genres}` : ``
+    }`,
   }).then((values) => {
     // console.log("popularMovie-------------------------", values.results);
-    let fiveItem = values.results.slice(0, 5);
+    let fiveItem = values.results ? values.results.slice(0, 5) : [];
+    // console.log("fiveItem------------", fiveItem);
     homeData["popularMovie"] = fiveItem;
   });
 
-  // console.log("homeDate-----------", homeData);
-
-  // const data = await apiClient('sort_by=popularity.desc&primary_release_year=2023&page=1&vote_count.gte=100')
   const data = [];
 
   years.map(async (year) => {
     // console.log("year----------", year);
-    const params = `sort_by=popularity.desc&primary_release_year=${year}&page=1&vote_count.gte=100`;
+    const params = `sort_by=popularity.desc&primary_release_year=${year}&page=1&vote_count.gte=100${
+      body.genres != 0 ? `&with_genres=${body.genres}` : ``
+    }`;
     const temp = apiClient({ params, year });
-    // console.log("temp------------", temp);
+
     data.push(temp);
   });
 
-  // console.log("data-------------", data);
-
   await Promise.all(data).then((values) => {
     homeData["items"] = values;
-    // console.log("values-------------------------", values);
   });
   return homeData;
 };

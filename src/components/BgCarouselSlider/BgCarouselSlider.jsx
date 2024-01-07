@@ -13,7 +13,7 @@ import { PlayIcon, StarIcon } from '@/assets/icon'
 // Import Swiper styles
 
 function BgCarouselSlider({ data }) {
-    console.log("data", data)
+    // console.log("data", data)
     return (
         <div className="carousel">
             <Swiper
@@ -33,15 +33,6 @@ function BgCarouselSlider({ data }) {
 
                         return (
                             <SwiperSlide className="slides" >
-
-                                {/* <Image
-                                    className="poster"
-                                    src={`${imageURL}/${item.poster_path}`}
-                                    width={1152}
-                                    height={864}
-                                    alt="Picture of the author"
-                                    loading="lazy"
-                                /> */}
 
                                 <div className='onPosterDetails'>
                                     <div className='movie-detail'>
@@ -63,12 +54,10 @@ function BgCarouselSlider({ data }) {
                                         width={960}
                                         height={540}
                                         alt="Picture of the author"
-                                        loading="lazy"
+                                    // loading="lazy"
                                     />
                                 </div>
-                                {/* {index} */}
-                                {/* <img src={`${imageURL}/${item.backdrop_path}`}></img> */}
-                                {/* <img src={`${imageURL}/${item.poster_path}`}></img> */}
+
                             </SwiperSlide>
                         )
                     })

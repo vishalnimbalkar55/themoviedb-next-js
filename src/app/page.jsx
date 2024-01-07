@@ -1,11 +1,24 @@
 import BgCarouselSlider from "@/components/BgCarouselSlider/BgCarouselSlider";
 import styles from "./page.module.scss";
 import apiClient, { homeApiService } from "@/utils/apiClient";
+import ListCarouselSlider from "@/components/ListCarouselSlider/ListCarouselSlider";
+import { genresList } from "@/constant/constants";
 
 
-export default async function Home() {
+export default async function Home({
+  params,
+  searchParams,
+}) {
+  console.log("params--------------", params)
+  console.log("searchParams--------------", searchParams)
+
+  const genre = genresList.filter(item => item.name == searchParams.genres ? searchParams.genres : 0)
+
+  console.log("genre-----------", genre)
+
   const body = {
     default: "popularity",
+    genres: genre.length > 0 ? genre[0].id : 0,
     timeline: [2012, 2013, 2014, 2015, 2016, 2017, 2018],
     startYear: 2012,
     endYear: 2023
@@ -17,12 +30,17 @@ export default async function Home() {
   return (
     <main className={` globalSectionWrapper ${styles.main}`}>
       <BgCarouselSlider data={homeData.popularMovie} />
-      <h1>testing styles</h1>
-      {
-        homeData.items.map((item) => {
-          return (<>{item.year}</>)
-        })
-      }
+
+      <section className={styles.yearListing}>
+        {
+          homeData.items.map((item) => {
+            // console.log("item---------", item)
+            return (<>
+              <ListCarouselSlider movieList={item} /></>)
+          })
+        }
+      </section>
+
     </main>
   );
 }

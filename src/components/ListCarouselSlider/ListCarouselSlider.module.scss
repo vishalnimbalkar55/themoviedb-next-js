@@ -1,0 +1,35 @@
+@import "../../styles/veriables.scss";
+.listCarouselContainer {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+
+    h3 {
+        color: $primary_color;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 57px */
+    }
+}
+
+@media only screen and (max-width: 1580px) {
+    .listCarouselContainer {
+        h3 {
+            font-size: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .listCarouselContainer {
+        gap: 10px;
+
+        h3 {
+            font-size: 20px;
+
+            line-height: 25px; /* 57px */
+        }
+    }
+}

@@ -175,3 +175,185 @@
         }
     }
 }
+
+@media only screen and (max-width: 1466px) {
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .mySwiper {
+            position: relative;
+
+            width: 100%;
+            max-height: 750px;
+            height: 750px;
+            border-radius: 12px;
+            overflow: hidden;
+
+            .slides {
+                // height: 100%;
+                .onPosterDetails {
+                    padding: 0 15%;
+
+                    .movie-detail {
+                        h1 {
+                            font-size: 30px;
+                            line-height: 30px;
+                        }
+                        p {
+                            font-size: 16px;
+
+                            line-height: 21px; /* 27px */
+                            margin-top: 10px;
+                        }
+                    }
+                    .other-details {
+                        a {
+                            font-size: 14px;
+                        }
+
+                        .rating {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 821px) {
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .mySwiper {
+            position: relative;
+
+            width: 100%;
+            // max-height: 750px;
+            height: auto;
+            border-radius: 12px;
+            overflow: hidden;
+
+            .slides {
+                // height: 100%;
+                .onPosterDetails {
+                    padding: 0 15%;
+
+                    .movie-detail {
+                        h1 {
+                            font-size: 30px;
+                            line-height: 30px;
+                        }
+                        p {
+                            font-size: 16px;
+
+                            line-height: 21px; /* 27px */
+                            margin-top: 10px;
+                        }
+                    }
+                    .other-details {
+                        a {
+                            padding: 7px 14px;
+                            font-size: 14px;
+                            svg {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+
+                        .rating {
+                            padding: 7px 14px;
+                            font-size: 14px;
+                            svg {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 465px) {
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .mySwiper {
+            position: relative;
+
+            width: 100%;
+            // max-height: 750px;
+            height: auto;
+            border-radius: 12px;
+            overflow: hidden;
+
+            .slides {
+                // height: 100%;
+                .onPosterDetails {
+                    padding: 0 15%;
+
+                    .movie-detail {
+                        h1 {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+                        p {
+                            font-size: 10px;
+                            line-height: 9px;
+                            margin-top: 5px;
+
+                            text-transform: none;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            display: -webkit-box;
+                        }
+                    }
+                    .other-details {
+                        a {
+                            font-size: 11px;
+                        }
+
+                        .rating {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+
+            .swiper-pagination {
+                bottom: 8px;
+                z-index: 10;
+                .swiper-pagination-bullet {
+                    width: 5px;
+                    height: 5px;
+
+                    &.swiper-pagination-bullet-active {
+                        width: 10px;
+                        background-color: $active_color;
+                    }
+                }
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 37px;
+
+                bottom: 5px;
+
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}

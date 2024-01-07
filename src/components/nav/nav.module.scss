@@ -13,23 +13,81 @@
             ul {
                 display: flex;
                 gap: 15px;
-                li {
-                    list-style: none;
-                    &.navItem {
-                        display: flex;
-                        padding: 10px 20px;
-                        align-items: center;
-                        // gap: 10px;
-                        font-size: 18px;
-                        font-style: normal;
-                        font-weight: 400;
-                        border-radius: 8px;
+                .navlink {
+                    text-decoration: none;
+                    border-radius: 8px;
+                    &.active {
+                        background-color: $active_color;
+                        color: $primary_color;
+                        height: fit-content;
+                    }
+                    li {
+                        list-style: none;
+                        color: $primary_color;
+                        &.navItem {
+                            display: flex;
+                            padding: 10px 20px;
+                            align-items: center;
+                            // gap: 10px;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 400;
+                            border-radius: 8px;
+                        }
                     }
                 }
             }
         }
+    }
+}
 
-        .navItem {
+@media only screen and (max-width: 1466px) {
+    .navbar {
+        .navWrapper {
+            .navTabs {
+                ul {
+                    .navlink {
+                        li {
+                            &.navItem {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 480px) {
+    .navbar {
+        background-color: $secondary_background;
+        padding: 9px 6px;
+
+        .navWrapper {
+            display: flex;
+            flex-direction: column;
+
+            .navTabs {
+                ul {
+                    display: flex;
+                    gap: 8px;
+                    .navlink {
+                        text-decoration: none;
+                        border-radius: 8px;
+
+                        li {
+                            &.navItem {
+                                padding: 7px 8px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .searchIcon {
+                display: none;
+            }
         }
     }
 }

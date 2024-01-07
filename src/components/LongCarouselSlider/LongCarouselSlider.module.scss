@@ -1,0 +1,169 @@
+@import "../../styles/veriables.scss";
+
+.lgCarouselContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .mySwiper {
+        position: relative;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .cardBody {
+            position: relative;
+            // display: flex;
+            height: 100%;
+            width: 100%;
+            // padding: 30px;
+            // flex-direction: column;
+            // align-items: flex-end;
+            // flex: 1 0 0;
+            // overflow: hidden;
+            background-color: $grey_80;
+            border-radius: 12px;
+            padding: 10px;
+            display: grid;
+            gap: 10px;
+
+            .cardPoster {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .cardTitle {
+                color: $primary_color;
+                // margin-top: 10px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                height: 50px;
+                line-height: 1.5rem;
+                letter-spacing: 0.03125em;
+                text-transform: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+            }
+
+            .cardRating {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 16px;
+            }
+            .cardDate {
+                font-size: 14px;
+                color: $grey_60;
+            }
+        }
+
+        .swiperPrev,
+        .swiperNext {
+            background-repeat: no-repeat;
+            width: 48px;
+            height: 60px;
+            // bottom: 5px;
+            // top: unset;
+            z-index: 24;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1580px) {
+    .lgCarouselContainer {
+        .mySwiper {
+            .cardBody {
+                .cardTitle {
+                    font-size: 18px;
+                }
+
+                .cardRating {
+                }
+                .cardDate {
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1466px) {
+    .lgCarouselContainer {
+        .mySwiper {
+            .cardBody {
+                .cardTitle {
+                    font-size: 16px;
+                }
+
+                .cardRating {
+                    font-size: 14px;
+                }
+                .cardDate {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .lgCarouselContainer {
+        .mySwiper {
+            .cardBody {
+                padding: 6px;
+
+                gap: 6px;
+
+                .cardTitle {
+                    font-size: 12px;
+
+                    height: 32px;
+                    line-height: 16px;
+                    letter-spacing: 0.03125em;
+                }
+
+                .cardRating {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    font-size: 10px;
+                    svg {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                .cardDate {
+                    font-size: 9px;
+                    color: $grey_60;
+                }
+            }
+
+            .swiperPrev,
+            .swiperNext {
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 37px;
+
+                bottom: 5px;
+
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}
